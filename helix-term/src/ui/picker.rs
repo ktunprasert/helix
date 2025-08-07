@@ -1128,13 +1128,13 @@ impl<I: 'static + Send + Sync, D: 'static + Send + Sync> Component for Picker<I,
                     return close_fn(self);
                 }
             }
-            ctrl!('s') => {
+            ctrl!('s') | alt!('j') => {
                 if let Some(option) = self.selection() {
                     (self.callback_fn)(ctx, option, Action::HorizontalSplit);
                 }
                 return close_fn(self);
             }
-            ctrl!('v') => {
+            ctrl!('v') | alt!('l') => {
                 if let Some(option) = self.selection() {
                     (self.callback_fn)(ctx, option, Action::VerticalSplit);
                 }
