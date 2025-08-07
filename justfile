@@ -8,3 +8,6 @@ pr:
     cargo fmt -all
     cargo clippy
     cargo xtask docgen
+
+deb-upload:
+    rclone copy target/debian/*.deb r2:/helix/
